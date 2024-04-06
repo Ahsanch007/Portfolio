@@ -1027,7 +1027,7 @@
                                         </div>
                                         <div class="iknow_tm_button">
                                             <!-- Use mailto: link to open default email client -->
-                                            <a id="send_message" href="#" onclick="sendEmail()">Submit Now</a>
+                                            <a id="send_message" onclick="sendEmail()" disabled>Submit Now</a>
                                         </div>
                                     </form>
                                 </div>
@@ -1080,13 +1080,43 @@
     <script src="js/plugins.js"></script>
     <script src="js/init.js"></script>
     <script>
+        // Get all input fields and submit button
+        var nameInput = document.getElementById('name');
+        var emailInput = document.getElementById('email');
+        var phoneInput = document.getElementById('phone');
+        var subjectInput = document.getElementById('subject');
+        var messageInput = document.getElementById('message');
+        var submitButton = document.getElementById('send_message');
+
+        // Add event listener to each input field
+        nameInput.addEventListener('input', toggleSubmitButton);
+        emailInput.addEventListener('input', toggleSubmitButton);
+        phoneInput.addEventListener('input', toggleSubmitButton);
+        subjectInput.addEventListener('input', toggleSubmitButton);
+        messageInput.addEventListener('input', toggleSubmitButton);
+
+        // Function to toggle submit button based on input fields' values
+        function toggleSubmitButton() {
+            if (nameInput.value !== '' && emailInput.value !== '' && phoneInput.value !== '' && subjectInput.value !== '' && messageInput.value !== '') {
+                submitButton.removeAttribute('disabled');
+            } else {
+                submitButton.setAttribute('disabled', 'disabled');
+            }
+        }
+
         function sendEmail() {
+            // Validate if all fields are filled
+            if (nameInput.value === '' || emailInput.value === '' || phoneInput.value === '' || subjectInput.value === '' || messageInput.value === '') {
+                alert('Please fill all fields before submitting.');
+                return;
+            }
+
             // Get form data
-            var name = document.getElementById('name').value;
-            var email = document.getElementById('email').value;
-            var phone = document.getElementById('phone').value;
-            var subject = document.getElementById('subject').value;
-            var message = document.getElementById('message').value;
+            var name = nameInput.value;
+            var email = emailInput.value;
+            var phone = phoneInput.value;
+            var subject = subjectInput.value;
+            var message = messageInput.value;
 
             // Compose the email body
             var body = "Name: " + name + "\n";
