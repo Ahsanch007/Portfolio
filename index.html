@@ -17,7 +17,7 @@
     <link rel="stylesheet" type="text/css" href="css/plugins.css">
     <link rel="stylesheet" type="text/css" href="css/dark.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-
+    <link rel="stylesheet" href="./css/main.css">
 
 </head>
 
@@ -26,7 +26,9 @@
     <div id="preloader">
         <div class="loader_line"></div>
     </div>
-
+    <div class="whats-app">
+        <img onclick="sendMessage()" src=" ./images/whatsapp.png" alt="">
+    </div>
 
     <div class="iknow_tm_all_wrap" data-magic-cursor="show">
 
@@ -47,7 +49,7 @@
                         <a href="#"><img src="images/dark.png" alt=""></a>
                     </div>
                     <div class="right">
-                        <div class="social">
+                        <!-- <div class="social">
                             <ul>
                                 <li><a href="https://www.facebook.com/ahsanch78"><img class="svg"
                                             src="images/facebook.svg" alt=""></a></li>
@@ -60,6 +62,20 @@
                                 <li><a href="https://github.com/Ahsanch007"><img class="svg" src="images/github.png"
                                             alt=""></a></li>
                             </ul>
+                        </div> -->
+                        <div class="card-social">
+                            <span>Social</span>
+                            <a class="social-link" href="https://www.linkedin.com/in/ahsan-ali-8a85ba159"><img
+                                    class="svg" src="images/linkedin.png" alt=""></a>
+                            <a class="social-link" href="https://github.com/Ahsanch007"><img class="svg"
+                                    src="images/github.png" alt=""></a>
+                            <a class="social-link" href="https://x.com/Ahsan__2?"><img class="svg"
+                                    src="images/twitter.svg" alt=""></a></a>
+                            <a class="social-link" href="https://vercel.com/ahsanch007s-projects"> <svg width="76"
+                                    height="65" viewBox="0 0 76 65" fill="#000" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M37.5274 0L75.0548 65H0L37.5274 0Z" fill="#ffffff" />
+                                </svg></a></a>
+
                         </div>
                         <div class="iknow_tm_button">
                             <a href="./images/Ahsan_Ali.pdf" download="">Download CV</a>
@@ -99,7 +115,7 @@
                         </div>
                         <div class="main_menu">
                             <ul>
-                                <li>
+                                <li class="active">
                                     <img class="svg" src="images/archive.svg" alt="">
                                     <span>About Me</span>
                                     <a class="iknow_tm_full_link" href="#about"></a>
@@ -119,6 +135,7 @@
                                     <span>Service</span>
                                     <a class="iknow_tm_full_link" href="#service"></a>
                                 </li>
+
                                 <!-- <li>
                                     <img class="svg" src="images/message.svg" alt="">
                                     <span>Testimonial</span>
@@ -502,7 +519,6 @@
                                             </div>
                                         </div>
                                         <div class="overlay"></div>
-                                        <!-- <img class="svg" src="images/vimeo.svg" alt=""> -->
                                         <div class="details">
                                             <span>Cobra Coin</span>
                                             <!-- <h3>Aumeo Audio</h3> -->
@@ -1048,7 +1064,16 @@
 
     </div>
 
-
+    <script>
+        function sendMessage() {
+            // Replace the number below with the desired WhatsApp number in international format
+            var phoneNumber = "+923156990150";
+            // Construct the WhatsApp URL
+            var whatsappUrl = "https://wa.me/" + phoneNumber;
+            // Open WhatsApp in a new tab or window
+            window.open(whatsappUrl, "_blank");
+        }
+    </script>
     <script data-cfasync="false" src="js/email-decode.min.js"></script>
     <script src="js/jquery.js"></script>
     <!--[if lt IE 10]> <script type="text/javascript" src="js/ie8.js"></script> <![endif]-->
