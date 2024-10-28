@@ -1170,7 +1170,7 @@ input[type="button"] {
 	z-index: 1043;
 	outline: 0 !important;
 	-webkit-backface-visibility: hidden;
-	top: 1000px;
+	top: 100px !important;
 }
 
 .mfp-container {
