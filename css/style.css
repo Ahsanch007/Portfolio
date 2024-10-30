@@ -7342,6 +7342,9 @@ input[type=number] {
     .iknow_tm_modalbox .box_inner {
         width: 300px
     }
+    .iknow_tm_mainpart{
+        padding: 0px 15px;
+    }
 
     .iknow_tm_resume .info_list ul li .short {
         flex-direction: column;
